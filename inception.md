@@ -108,3 +108,16 @@ To confirm it worked, the following command should display ```docker```:
 ```bash
 id -nG | grep -o 'docker'
 ```
+
+### INITIALIZE YOUR FILES AS THE SUBJECT REQUESTS
+
+Go to the folder that will contain your project and pqste in:
+```bash
+touch Makefile
+mkdir -p srcs/requirements/{bonus,mariadb/{conf,tools},nginx/{conf,tools},wordpress/{conf,tools},tools}
+touch srcs/docker-compose.yml
+echo -e "DOMAIN_NAME=xxx.42.fr\n# certificates\nCERTS_=./xxx\n# MYSQL SETUP\nMYSQL_ROOT_PASSWORD=xxx\nMYSQL_USER=xxx\nMYSQL_PASSWORD=xxx" > srcs/.env
+touch srcs/requirements/mariadb/{Dockerfile,.dockerignore,conf/mariadb.conf}
+touch srcs/requirements/nginx/{Dockerfile,.dockerignore,conf/nginx.conf}
+ls -alR
+```
