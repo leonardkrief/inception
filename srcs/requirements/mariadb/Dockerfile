@@ -10,7 +10,7 @@ RUN apt-get install -y procps
 
 
 # copy the provided config file to the container
-COPY ./conf/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
+COPY ./conf/mariadb.conf /etc/mysql/mariadb.conf.d/50-server.cnf
 
 RUN mkdir -p /var/run/mysqld
 RUN mkdir -p /var/lib/mysql
