@@ -17,7 +17,7 @@ RUN cd /var/www/html \
 	&& tar -xzf /var/www/html/wordpress-6.1.1.tar.gz \
 	&& rm /var/www/html/wordpress-6.1.1.tar.gz
 
-# ensure that the web server(nginx) has the necessary permissions to read and execute the files within the web root directory
+# ensure that the web server has the necessary permissions to read and execute the files within the web root directory
 RUN chown -R www-data:www-data /var/www/*
 RUN chmod -R 755 /var/www/*
 
@@ -28,4 +28,4 @@ RUN chmod +x ./wpscript.sh
 
 COPY ./tools/www.conf /etc/php/7.3/fpm/pool.d/www.conf
 
-ENTRYPOINT ["bash", "./wpscript.sh"]
+ENTRYPOINT ["sh", "./wpscript.sh"]

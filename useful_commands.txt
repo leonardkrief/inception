@@ -1,0 +1,16 @@
+
+
+# Database part
+
+docker exec -it wordpress bash
+mysql -h mariadb -P 3306 -u dbuser -p
+
+password = dbpassword
+
+CREATE TABLE employees (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    age INT,
+    department VARCHAR(255)
+);
+INSERT INTO employees (name, age, department) VALUES ('John Doe', 30, 'Engineering');
